@@ -6,11 +6,8 @@ import java.time.LocalDateTime;
 
 public class DailyWorkingEndTime extends Time {
 
-    public DailyWorkingEndTime(String fromTime) {
-        super.inputTime = fromTime;
-        // ここでLocalTimeにするか？
-        LocalDateTime nowTime = LocalDateTime.now();
-        super.time = LocalDateTime.of(nowTime.getYear(), nowTime.getMonth(), nowTime.getDayOfMonth(), Integer.parseInt(fromTime.substring(0,2)), Integer.parseInt(fromTime.substring(2)));
+    public DailyWorkingEndTime(String time) {
+        super(time);
     }
 
     public boolean check(){
