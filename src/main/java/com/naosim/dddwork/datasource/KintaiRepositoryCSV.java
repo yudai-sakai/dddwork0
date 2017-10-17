@@ -13,6 +13,12 @@ import static java.lang.System.*;
 public class KintaiRepositoryCSV implements KintaiRepository {
     @Override
     public void registerKintai(DailyKintai dailyKintai) {
+        File file = new File("/tmp/test_write.csv");
+        try(FileWriter fileWriter = new FileWriter(file, true)){
+            fileWriter.write(String.format("%s,%s,%s¥n", "20171010", "0900", "1800"));
+        } catch(Exception e){
+            out.println(e);
+        }
     }
 
     @Override
