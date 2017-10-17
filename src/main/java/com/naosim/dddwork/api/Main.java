@@ -1,5 +1,8 @@
 package com.naosim.dddwork.api;
 
+import com.naosim.dddwork.domain.daily_kintai.DailyWorkingEndTime;
+import com.naosim.dddwork.domain.daily_kintai.DailyWorkingStartTime;
+import com.naosim.dddwork.domain.daily_kintai.KintaiDate;
 import com.naosim.dddwork.service.InputKintai;
 
 public class Main {
@@ -15,7 +18,7 @@ public class Main {
             if(ServiceType.getEnum(serviceType).isInput()){
                 // 勤怠入力サービスを呼ぶ
                 InputKintai kintai = new InputKintai();
-                kintai.execute(args);
+                kintai.execute(new KintaiDate(args[1]), new DailyWorkingStartTime(args[2]), new DailyWorkingEndTime(args[3]));
             }
             if(ServiceType.getEnum(serviceType).isTotal()){
                 // 勤怠集計サービスを呼ぶ

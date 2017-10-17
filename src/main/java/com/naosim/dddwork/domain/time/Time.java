@@ -1,19 +1,21 @@
 package com.naosim.dddwork.domain.time;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 
 // 時刻
-abstract class Time {
-    protected String inputTime;
+public abstract class Time {
     protected LocalDateTime time;
 
-    // チェック
-    public boolean formatCheck(){
+    public Time (String time){
         // フォーマットチェック
-        return true;
+        DateFormat dateFormat = new SimpleDateFormat("HHMM");
+        LocalDateTime nowTime = LocalDateTime.now();
+        this.time = LocalDateTime.of(nowTime.getYear(), nowTime.getMonth(), nowTime.getDayOfMonth(), Integer.parseInt(time.substring(0,2)), Integer.parseInt(time.substring(2)));
     }
 
-    abstract boolean check();
+    public abstract boolean check();
 
     public LocalDateTime getTime() {
         return time;
