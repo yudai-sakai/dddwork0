@@ -3,8 +3,11 @@ package com.naosim.dddwork.domain.time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoField;
 
-// 時刻
+/**
+ * 時刻
+ */
 public abstract class Time {
     protected LocalDateTime time;
 
@@ -20,4 +23,10 @@ public abstract class Time {
     public LocalDateTime getTime() {
         return time;
     }
+
+    public long getMinutesLong() {
+        //TODO
+        return time.getLong(ChronoField.MINUTE_OF_HOUR);
+    }
+
 }
