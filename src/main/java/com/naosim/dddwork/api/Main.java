@@ -27,7 +27,7 @@ public class Main {
                 // 勤怠集計サービスを呼ぶ
                 TotalMonthlyKintai totalMonthlyKintai = new TotalMonthlyKintai();
                 // TODO
-                YearMonth yearMonth = new YearMonth();
+                YearMonth yearMonth = new YearMonth(args[1]);
                 totalMonthlyKintai.execute(yearMonth);
             }
 

@@ -9,7 +9,7 @@ public class DailyKintaiList {
     List<DailyKintai> listDailyKintai;
 
     public DailyKintaiList(){
-        listDailyKintai = new ArrayList<>();
+        listDailyKintai = new ArrayList<DailyKintai>();
     }
 
     public void add(DailyKintai dailyKintai){
