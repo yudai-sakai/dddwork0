@@ -12,13 +12,19 @@ public class MonthlyKintai {
     DailyKintaiList dailyKintaiList;
 
 
+    public MonthlyKintai(YearMonth yearMonth, DailyKintaiList dailyKintaiList){
+        this.yearMonth = yearMonth;
+        this.dailyKintaiList = dailyKintaiList;
+    }
+
+
     // 合計労働時間計算
     public Hour calcTotalActualWorkingHours(){
-
+        return null;
     }
     // 合計残業時間計算
     public Hour calcTotalOvertimeHours(){
-
+        return null;
     }
 
 }

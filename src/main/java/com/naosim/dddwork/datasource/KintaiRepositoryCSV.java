@@ -36,11 +36,15 @@ public class KintaiRepositoryCSV implements KintaiRepository {
             // 日次勤怠作成
             while(line != null){
                 String[] columns = line.split(",");
-
                 // TODO columnsのチェック
+                String strDate = columns[0].substring(0,5);
+                YearMonth csvDate = new YearMonth(strDate);
+                
+                if(yearMonth.isEqualYearMonth(csvDate)){
+                    DailyKintai dailyKintai = new DailyKintai(new KintaiDate(columns[0]), new ActualWorkingHours(new InTime(columns[1]), new OutTime(columns[2])));
+                    dailyKintaiList.add(dailyKintai);
+                }
 
-                DailyKintai dailyKintai = new DailyKintai(new KintaiDate(columns[0]), new ActualWorkingHours(new InTime(columns[1]), new OutTime(columns[2])));
-                dailyKintaiList.add(dailyKintai);
                 line = br.readLine();
             }
         }catch(Exception e){

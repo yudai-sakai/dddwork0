@@ -10,8 +10,10 @@ public class TotalMonthlyKintai {
     private KintaiRepository kintaiRepository = new KintaiRepositoryCSV();
 
     public void execute(YearMonth yearMonth){
+        // 日時勤怠配列取得
         DailyKintaiList dailyKintaiList = kintaiRepository.readRegisteredKintai(yearMonth);
 
+        //　計算処理
 
     }
 
