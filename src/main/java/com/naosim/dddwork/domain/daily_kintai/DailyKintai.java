@@ -4,14 +4,14 @@ package com.naosim.dddwork.domain.daily_kintai;
 public class DailyKintai {
 
     KintaiDate date;
-    ActualWorkingHours hours;
+    WorkingHours hours;
 
-    public DailyKintai(KintaiDate kintaiDate, ActualWorkingHours actualWorkingHours) {
+    public DailyKintai(KintaiDate kintaiDate, WorkingHours actualWorkingHours) {
         this.date = kintaiDate;
         this.hours = actualWorkingHours;
     }
 
-    public ActualWorkingHours getHours() {
+    public WorkingHours getHours() {
         return hours;
     }
 

@@ -1,10 +1,12 @@
-package com.naosim.dddwork.domain.time;
+package com.naosim.dddwork.domain.daily_kintai;
+
+import com.naosim.dddwork.domain.time.Time;
 
 import java.time.LocalDateTime;
 
-public class OutTime extends Time {
+public class DailyWorkingEndTime extends Time {
 
-    public OutTime(String fromTime) {
+    public DailyWorkingEndTime(String fromTime) {
         super.inputTime = fromTime;
         // ここでLocalTimeにするか？
         LocalDateTime nowTime = LocalDateTime.now();
