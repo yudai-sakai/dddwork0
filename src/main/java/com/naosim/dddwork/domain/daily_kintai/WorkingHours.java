@@ -37,19 +37,19 @@ public class WorkingHours {
     }
 
     // 勤務時間計算
-    public Hour getWorkingHours() {
+    public Hour calcWorkingHours() {
         //TODO
-        return this.getActualWorkingHours().minus(this.getOverWorkHours());
+        return this.calcActualWorkingHours().minus(this.calcOverWorkHours());
     }
 
     // 残業時間計算
-    public Hour getOverWorkHours() {
+    public Hour calcOverWorkHours() {
         //TODO
-        return this.getActualWorkingHours();
+        return this.calcActualWorkingHours();
    }
 
     // 就業時間計算
-    public Hour getActualWorkingHours() {
+    public Hour calcActualWorkingHours() {
 
         //TODO
 
