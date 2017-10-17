@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.Year;
 import java.util.Date;
 
+// 年月
 public class YearMonth {
     Date yearMonth; // localDate
 
