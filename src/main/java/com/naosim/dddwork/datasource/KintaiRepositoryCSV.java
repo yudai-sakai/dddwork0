@@ -15,7 +15,11 @@ public class KintaiRepositoryCSV implements KintaiRepository {
     public void registerKintai(DailyKintai dailyKintai) {
         File file = new File("/tmp/test_write.csv");
         try(FileWriter fileWriter = new FileWriter(file, true)){
-            fileWriter.write(String.format("%s,%s,%s¥n", "20171010", "0900", "1800"));
+            fileWriter.write(String.format(
+                    "%s,%s,%s\n",
+                    dailyKintai.getKintaiDate(),
+                    dailyKintai.getDailyWorkingStartTime().getTimeHHMMString(),
+                    dailyKintai.getDailyWorkingEndTime().getTimeHHMMString()));
         } catch(Exception e){
             out.println(e);
         }
