@@ -1,21 +1,25 @@
 package com.naosim.dddwork.domain.daily_kintai;
 
-// 日次勤怠
+import com.naosim.dddwork.domain.hour.Hour;
+
+/**
+ * 日次勤怠Entity
+ */
 public class DailyKintai {
 
-    KintaiDate date;
-    ActualWorkingHours hours;
+    KintaiDate kintaiDate;
+    WorkingHours workingHours;
 
-    public DailyKintai(KintaiDate kintaiDate, ActualWorkingHours actualWorkingHours) {
-        this.date = kintaiDate;
-        this.hours = actualWorkingHours;
+    public DailyKintai(KintaiDate kintaiDate, WorkingHours workingHours) {
+        this.kintaiDate = kintaiDate;
+        this.workingHours = workingHours;
     }
-
-    public ActualWorkingHours getHours() {
-        return hours;
+    //勤務時間
+    public Hour getWorkingHours() {
+        return this.workingHours.getWorkingHours();
     }
-
-    public KintaiDate getDate() {
-        return date;
+    //残業時間
+    public Hour getOverWorkHours() {
+        return this.workingHours.getOverWorkHours();
     }
 }
