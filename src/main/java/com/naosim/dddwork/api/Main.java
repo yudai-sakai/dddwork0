@@ -1,5 +1,6 @@
 package com.naosim.dddwork.api;
 
+import com.naosim.dddwork.domain.year_month.YearMonth;
 import com.naosim.dddwork.service.InputKintai;
 import com.naosim.dddwork.service.TotalMonthlyKintai;
 

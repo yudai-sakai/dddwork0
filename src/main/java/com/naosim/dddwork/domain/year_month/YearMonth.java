@@ -6,7 +6,7 @@ import java.time.Year;
 import java.util.Date;
 
 public class YearMonth {
-    Date yearMonth;
+    Date yearMonth; // localDate
 
     public YearMonth(String dateStr) throws ParseException{
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
