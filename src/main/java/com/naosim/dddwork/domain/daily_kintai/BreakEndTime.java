@@ -13,4 +13,6 @@ public class BreakEndTime extends Time {
     public boolean check(){
         return true;
     }
+
+
 }

@@ -28,6 +28,13 @@ public class WorkingHours {
 //      if(this.dailyWorkingStartTime > this.dailyWorkingEndTime) ;
 
     }
+    public DailyWorkingStartTime getDailyWorkingStartTime(){
+        return dailyWorkingStartTime;
+    }
+
+    public DailyWorkingEndTime getDailyWorkingEndTime(){
+        return dailyWorkingEndTime;
+    }
 
     // 勤務時間計算
     public Hour getWorkingHours() {
