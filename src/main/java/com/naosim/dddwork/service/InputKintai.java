@@ -9,8 +9,9 @@ public class InputKintai {
     private KintaiRepository kintaiRepository = new KintaiRepositoryCSV();
 
     public void execute(KintaiDate kintaiDate, DailyWorkingStartTime dailyKintaiStartTime, DailyWorkingEndTime dailyKintaiEndTime){
-
-        DailyKintai kintai = DailyKintaiFactory.createDailyKintai(kintaiDate, dailyKintaiStartTime, dailyKintaiEndTime);
-        kintaiRepository.registerKintai(kintai);
+        
+        WorkingHours workingHours = new WorkingHours(dailyKintaiStartTime, dailyKintaiEndTime);
+        DailyKintai dailyKintai = new DailyKintai(kintaiDate, workingHours);
+        kintaiRepository.registerKintai(dailyKintai);
     }
 }

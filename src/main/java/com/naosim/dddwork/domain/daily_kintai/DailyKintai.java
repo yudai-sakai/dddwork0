@@ -14,12 +14,29 @@ public class DailyKintai {
         this.kintaiDate = kintaiDate;
         this.workingHours = workingHours;
     }
-    //勤務時間
-    public Hour getWorkingHours() {
+
+
+    public KintaiDate getKintaiDate(){
+        return kintaiDate;
+    }
+    public WorkingHours getWorkingHours(){
+        return workingHours;
+    }
+
+    public DailyWorkingStartTime getDailyWorkingStartTime(){
+        return workingHours.getDailyWorkingStartTime();
+    }
+    public DailyWorkingEndTime getDailyWorkingEndTime(){
+        return workingHours.getDailyWorkingEndTime();
+    }
+
+
+    //勤務時間計算
+    public Hour calcWorkingHours() {
         return this.workingHours.getWorkingHours();
     }
-    //残業時間
-    public Hour getOverWorkHours() {
+    //残業時間計算
+    public Hour calcOverWorkHours() {
         return this.workingHours.getOverWorkHours();
     }
 }

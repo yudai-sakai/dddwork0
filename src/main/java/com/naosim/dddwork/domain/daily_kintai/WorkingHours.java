@@ -23,39 +23,41 @@ public class WorkingHours {
         this.dailyWorkingEndTime.check();
 
         return true;
+
         //日付の逆転 TODO
 //      if(this.dailyWorkingStartTime > this.dailyWorkingEndTime) ;
 
     }
+    public DailyWorkingStartTime getDailyWorkingStartTime(){
+        return dailyWorkingStartTime;
+    }
+
+    public DailyWorkingEndTime getDailyWorkingEndTime(){
+        return dailyWorkingEndTime;
+    }
 
     // 勤務時間計算
     public Hour getWorkingHours() {
-
         //TODO
-        return
-            new Hour(
-            dailyWorkingEndTime.getMinutesLong() -
-                    dailyWorkingStartTime.getMinutesLong());
+        return this.getActualWorkingHours().minus(this.getOverWorkHours());
     }
 
     // 残業時間計算
     public Hour getOverWorkHours() {
-
-        return null;
         //TODO
-//        return new Hour (
-//                this.getWorkingHours()
-//
-//        );
-    }
+        return this.getActualWorkingHours();
+   }
 
     // 就業時間計算
-    public Hour ActualWorkingHours() {
+    public Hour getActualWorkingHours() {
 
-        return
-          new Hour(
-                dailyWorkingEndTime.getMinutesLong() -
-                        dailyWorkingStartTime.getMinutesLong());
+        //TODO
+
+        return null;
+//        return
+//          new Hour(
+//                dailyWorkingEndTime.getMinutesLong() -
+//                        dailyWorkingStartTime.getMinutesLong());
 
     }
 }

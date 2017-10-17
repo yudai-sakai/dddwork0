@@ -9,34 +9,34 @@ import java.time.Duration;
  */
 public class Hour {
 
-    private final long minutes;
+    private final Time time;
 
-    public Hour( long minutes){
-        this.minutes = minutes;
+    public Hour(Time time){
+        this.time = time;
     }
 
-    //HHMM取得
-    //Todo
+   //HHMM取得
     public String getHHMM(){
        return "";
     }
-
     public Hour plus(Hour plus){
-        return new Hour(this.minutes + plus.getMinutes());
+        return null;
+        //return new Hour(this.minutes + plus.getMinutes());
     }
     public Hour minus(Hour plus){
-        return new Hour(this.minutes - plus.getMinutes());
+        return null;
+        //return new Hour(this.minutes - plus.getMinutes());
     }
 
-    public long getMinutes(){
-        return this.minutes;
-    }
-    public static Hour minus(long minutes1, long minutes2 ){
-        return new Hour(minutes1-minutes2);
-    }
-    public static Hour plus(long minutes1, long minutes2 ){
-        return new Hour(minutes1+minutes2);
-    }
+//    public long getMinutes(){
+//        return this.minutes;
+//    }
+//    public static Hour minus(long minutes1, long minutes2 ){
+//        return new Hour(minutes1-minutes2);
+//    }
+//    public static Hour plus(long minutes1, long minutes2 ){
+//        return new Hour(minutes1+minutes2);
+//    }
 
     //
 //
