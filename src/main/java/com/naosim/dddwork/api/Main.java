@@ -1,6 +1,9 @@
 package com.naosim.dddwork.api;
 
 import com.naosim.dddwork.service.InputKintai;
+import com.naosim.dddwork.service.TotalMonthlyKintai;
+
+import java.util.Date;
 
 public class Main {
 
@@ -19,6 +22,10 @@ public class Main {
             }
             if(ServiceType.getEnum(serviceType).isTotal()){
                 // 勤怠集計サービスを呼ぶ
+                TotalMonthlyKintai totalMonthlyKintai = new TotalMonthlyKintai();
+                // TODO
+                YearMonth yearMonth = new YearMonth();
+                totalMonthlyKintai.execute(yearMonth);
             }
 
         } catch (Exception e) {
