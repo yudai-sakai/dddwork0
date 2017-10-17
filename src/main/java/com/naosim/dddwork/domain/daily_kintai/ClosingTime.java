@@ -5,13 +5,13 @@ import com.naosim.dddwork.domain.hour.Hour;
 public enum ClosingTime {
 
     終業時間("1800");
-    private Hour hour;
+    private Hour closingTime;
 
-    ClosingTime(String setHour){
-        this.hour = new Hour(setHour);
+    ClosingTime(String closingTime){
+        this.closingTime = new Hour(new DailyWorkingEndTime(closingTime));
     }
 
-    public Hour getHour(){
-        return this.hour;
+    public Hour closingTime(){
+        return this.closingTime;
     }
 }
