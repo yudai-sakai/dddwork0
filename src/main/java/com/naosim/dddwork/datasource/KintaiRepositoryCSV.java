@@ -1,18 +1,11 @@
 package com.naosim.dddwork.datasource;
 
 import com.naosim.dddwork.datasource.csv.DailyKintaiList;
-import com.naosim.dddwork.domain.daily_kintai.ActualWorkingHours;
-import com.naosim.dddwork.domain.daily_kintai.DailyKintai;
-import com.naosim.dddwork.domain.daily_kintai.KintaiDate;
-import com.naosim.dddwork.domain.daily_kintai.KintaiRepository;
-import com.naosim.dddwork.domain.time.InTime;
-import com.naosim.dddwork.domain.time.OutTime;
+import com.naosim.dddwork.domain.daily_kintai.*;
+import com.naosim.dddwork.domain.KintaiRepository;
 import com.naosim.dddwork.domain.year_month.YearMonth;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 
 import static java.lang.System.*;
 
@@ -20,7 +13,6 @@ import static java.lang.System.*;
 public class KintaiRepositoryCSV implements KintaiRepository {
     @Override
     public void registerKintai(DailyKintai dailyKintai) {
-
     }
 
     @Override
@@ -41,7 +33,7 @@ public class KintaiRepositoryCSV implements KintaiRepository {
                 YearMonth csvDate = new YearMonth(strDate);
 
                 if(yearMonth.isEqualYearMonth(csvDate)){
-                    DailyKintai dailyKintai = new DailyKintai(new KintaiDate(columns[0]), new ActualWorkingHours(new InTime(columns[1]), new OutTime(columns[2])));
+                    DailyKintai dailyKintai = new DailyKintai(new KintaiDate(columns[0]), new WorkingHours(new DailyWorkingStartTime(columns[1]), new DailyWorkingEndTime(columns[2])));
                     dailyKintaiList.add(dailyKintai);
                 }
 
