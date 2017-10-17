@@ -24,9 +24,4 @@ public abstract class Time {
         return time;
     }
 
-    public long getMinutesLong() {
-        //TODO
-        return time.getLong(ChronoField.MINUTE_OF_HOUR);
-    }
-
 }
