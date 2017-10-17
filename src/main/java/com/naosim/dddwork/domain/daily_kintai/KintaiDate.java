@@ -2,7 +2,7 @@ package com.naosim.dddwork.domain.daily_kintai;
 
 import java.time.LocalDate;
 
-// ¶ĞÂÕÆüÉÕ
+// å‹¤æ€ æ—¥ä»˜
 public class KintaiDate {
 
     private String date;
@@ -11,7 +11,7 @@ public class KintaiDate {
         this.date = date;
     }
 
-    // ¥Á¥§¥Ã¥¯
+    // ãƒã‚§ãƒƒã‚¯
     public boolean isDate(){
         // TODO
         return true;

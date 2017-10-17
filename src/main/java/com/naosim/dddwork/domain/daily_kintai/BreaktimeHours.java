@@ -1,9 +1,9 @@
 package com.naosim.dddwork.domain.daily_kintai;
 
-// µÙ·Æ»ş´Ö
+// ä¼‘æ†©æ™‚é–“
 public class BreaktimeHours {
 
-    // µÙ·Æ¹µ½ü»ş´Ö¼èÆÀ
+    // ä¼‘æ†©æ§é™¤æ™‚é–“å–å¾—
     public getHoursWithoutBreaktime(){
 
     }

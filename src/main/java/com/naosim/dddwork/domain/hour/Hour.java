@@ -1,6 +1,6 @@
 package com.naosim.dddwork.domain.hour;
 
-// »þ´Ö
+// æ™‚é–“
 public class Hour {
 
 }

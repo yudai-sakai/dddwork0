@@ -6,19 +6,19 @@ public class Main {
 
     public static void main(String args[]){
         try {
-            // °ú¿ô¥Á¥§¥Ã¥¯
+            // å¼•æ•°ãƒã‚§ãƒƒã‚¯
             if(args.length < 1) {
-                throw new RuntimeException("°ú¿ô¤¬Â­¤ê¤Ş¤»¤ó");
+                throw new RuntimeException("å¼•æ•°ãŒè¶³ã‚Šã¾ã›ã‚“");
             }
             String serviceType = args[0];
 
             if(ServiceType.getEnum(serviceType).isInput()){
-                // ¶ĞÂÕÆşÎÏ¥µ¡¼¥Ó¥¹¤ò¸Æ¤Ö
+                // å‹¤æ€ å…¥åŠ›ã‚µãƒ¼ãƒ“ã‚¹ã‚’å‘¼ã¶
                 InputKintai kintai = new InputKintai();
                 kintai.execute(args);
             }
             if(ServiceType.getEnum(serviceType).isTotal()){
-                // ¶ĞÂÕ½¸·×¥µ¡¼¥Ó¥¹¤ò¸Æ¤Ö
+                // å‹¤æ€ é›†è¨ˆã‚µãƒ¼ãƒ“ã‚¹ã‚’å‘¼ã¶
             }
 
         } catch (Exception e) {

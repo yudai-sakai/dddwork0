@@ -4,13 +4,13 @@ import com.naosim.dddwork.domain.daily_kintai.DailyKintai;
 
 import java.util.List;
 
-// ·î¼¡¶ĞÂÕ
+// æœˆæ¬¡å‹¤æ€ 
 public class MonthlyKintai {
     List<DailyKintai> dailyKintais;
 
 
-    // ¹ç·×Ï«Æ¯»ş´Ö·×»»
+    // åˆè¨ˆåŠ´åƒæ™‚é–“è¨ˆç®—
 
-    // ¹ç·×»Ä¶È»ş´Ö·×»»
+    // åˆè¨ˆæ®‹æ¥­æ™‚é–“è¨ˆç®—
 
 }

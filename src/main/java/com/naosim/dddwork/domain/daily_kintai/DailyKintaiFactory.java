@@ -3,7 +3,7 @@ package com.naosim.dddwork.domain.daily_kintai;
 import com.naosim.dddwork.domain.time.InTime;
 import com.naosim.dddwork.domain.time.OutTime;
 
-// Æü¼¡¶ĞÂÕ¥Õ¥¡¥¯¥È¥ê¡¼
+// æ—¥æ¬¡å‹¤æ€ ãƒ•ã‚¡ã‚¯ãƒˆãƒªãƒ¼
 public class DailyKintaiFactory {
 
     public static DailyKintai createDailyKintai(String date, String inTime, String outTime){
@@ -14,7 +14,7 @@ public class DailyKintaiFactory {
         if(!setInTime.check()) return null;
         OutTime setOutTime = new OutTime(outTime);
         if(!setOutTime.check()) return null;
-        // InTime¤ÈOutTime¤ÎÁê¸ß´ØÏ¢¥Á¥§¥Ã¥¯¤Ï¤³¤³¤Ç¼ÂÁõ TODO
+        // InTimeã¨OutTimeã®ç›¸äº’é–¢é€£ãƒã‚§ãƒƒã‚¯ã¯ã“ã“ã§å®Ÿè£… TODO
 
         ActualWorkingHours actualWorkingHours = new ActualWorkingHours(setInTime, setOutTime);
         DailyKintai dailyKintai = new DailyKintai(kintaiDate, actualWorkingHours);

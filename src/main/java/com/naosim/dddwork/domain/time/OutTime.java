@@ -6,7 +6,7 @@ public class OutTime extends Time {
 
     public OutTime(String fromTime) {
         super.inputTime = fromTime;
-        // ¤³¤³¤ÇLocalTime¤Ë¤¹¤ë¤«¡©
+        // ã“ã“ã§LocalTimeã«ã™ã‚‹ã‹ï¼Ÿ
         LocalDateTime nowTime = LocalDateTime.now();
         super.time = LocalDateTime.of(nowTime.getYear(), nowTime.getMonth(), nowTime.getDayOfMonth(), Integer.parseInt(fromTime.substring(0,2)), Integer.parseInt(fromTime.substring(2)));
     }

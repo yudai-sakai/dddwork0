@@ -2,14 +2,14 @@ package com.naosim.dddwork.domain.time;
 
 import java.time.LocalDateTime;
 
-// »ş¹ï
+// æ™‚åˆ»
 abstract class Time {
     protected String inputTime;
     protected LocalDateTime time;
 
-    // ¥Á¥§¥Ã¥¯
+    // ãƒã‚§ãƒƒã‚¯
     public boolean formatCheck(){
-        // ¥Õ¥©¡¼¥Ş¥Ã¥È¥Á¥§¥Ã¥¯
+        // ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆãƒã‚§ãƒƒã‚¯
         return true;
     }
 

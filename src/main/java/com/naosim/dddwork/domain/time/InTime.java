@@ -10,7 +10,7 @@ public class InTime extends Time {
 
     public InTime(String fromTime) {
         super.inputTime = fromTime;
-        // ¤³¤³¤ÇLocalTime¤Ë¤¹¤ë¤«¡©
+        // ã“ã“ã§LocalTimeã«ã™ã‚‹ã‹ï¼Ÿ
         DateFormat dateFormat = new SimpleDateFormat("HHMM");
         LocalDateTime nowTime = LocalDateTime.now();
         super.time = LocalDateTime.of(nowTime.getYear(), nowTime.getMonth(), nowTime.getDayOfMonth(), Integer.parseInt(fromTime.substring(0,2)), Integer.parseInt(fromTime.substring(2)));

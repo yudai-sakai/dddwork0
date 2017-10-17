@@ -7,13 +7,12 @@ import com.naosim.dddwork.domain.daily_kintai.KintaiRepository;
 
 public class InputKintai {
 
-    // spring¤¬»È¤¨¤ì¤ĞDI¤Ç
     private KintaiRepository kintaiRepository = new KintaiRepositoryCSV();
 
     public void execute(String[] args){
-        // ¥³¥Ş¥ó¥É°ú¿ô¥Á¥§¥Ã¥¯
+
         if(args.length != 4){
-            // TODO: »à¤ËÊı¤ò¹Í¤¨¤ë
+            // TODO: æ­»ã«æ–¹ã‚’è€ƒãˆã‚‹
         }
 
         String date = args[1];

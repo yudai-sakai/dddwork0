@@ -1,6 +1,6 @@
 package com.naosim.dddwork.domain.daily_kintai;
 
-// Æü¼¡¶ĞÂÕ
+// æ—¥æ¬¡å‹¤æ€ 
 public class DailyKintai {
 
     KintaiDate date;

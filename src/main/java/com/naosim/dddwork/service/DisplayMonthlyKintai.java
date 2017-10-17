@@ -1,6 +1,6 @@
 package com.naosim.dddwork.service;
 
-// ·î¼¡½¸·×
+// æœˆæ¬¡é›†è¨ˆ
 public class DisplayMonthlyKintai {
 
 }

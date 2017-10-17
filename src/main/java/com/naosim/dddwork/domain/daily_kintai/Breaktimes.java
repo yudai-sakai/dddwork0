@@ -3,6 +3,7 @@ package com.naosim.dddwork.domain.daily_kintai;
 import com.naosim.dddwork.domain.time.InTime;
 import com.naosim.dddwork.domain.time.OutTime;
 
+// 休憩時間
 public enum Breaktimes {
     hiru(new InTime(), new OutTime()),
     yuugata(new InTime(), new OutTime()),

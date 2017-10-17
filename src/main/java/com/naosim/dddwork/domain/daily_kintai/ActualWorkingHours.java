@@ -4,7 +4,7 @@ import com.naosim.dddwork.domain.hour.Hour;
 import com.naosim.dddwork.domain.time.InTime;
 import com.naosim.dddwork.domain.time.OutTime;
 
-// ½¢¶È»ş´Ö
+// å°±æ¥­æ™‚é–“
 public class ActualWorkingHours {
     private InTime inTime;
     private OutTime outTime;
@@ -14,17 +14,17 @@ public class ActualWorkingHours {
         this.outTime = outTime;
     }
 
-    // Ï«Æ¯»ş´Ö·×»»
+    // åŠ´åƒæ™‚é–“è¨ˆç®—
     public Hour getWorkingHours(){
         return null;
     }
 
-    // »Ä¶È»ş´Ö·×»»
+    // æ®‹æ¥­æ™‚é–“è¨ˆç®—
     public Hour getOverWorkHours() {
         return null;
     }
 
-    // ½¢¶È»ş´Ö·×»»
+    // å°±æ¥­æ™‚é–“è¨ˆç®—
     public Hour ActualWorkingHours() {
         return null;
     }

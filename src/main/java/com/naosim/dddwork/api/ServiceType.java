@@ -1,5 +1,6 @@
 package com.naosim.dddwork.api;
 
+// 操作種別
 public enum ServiceType {
     input,
     total;
