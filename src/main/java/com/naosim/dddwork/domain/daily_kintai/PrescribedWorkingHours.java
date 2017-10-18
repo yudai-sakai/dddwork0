@@ -9,12 +9,7 @@ public enum PrescribedWorkingHours {
     private Hour prescribedWorkingHours;
 
     PrescribedWorkingHours(String prescribedWorkingHours) {
-        this.prescribedWorkingHours = new Hour(new Time(prescribedWorkingHours) {
-            @Override
-            public boolean check() {
-                return false;
-            }
-        });
+        this.prescribedWorkingHours = new Hour(new Time(prescribedWorkingHours));
     }
 
     public Hour prescribedWorkingHours(){
