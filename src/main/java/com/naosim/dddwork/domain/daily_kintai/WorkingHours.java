@@ -1,8 +1,11 @@
 package com.naosim.dddwork.domain.daily_kintai;
 
 import com.naosim.dddwork.domain.hour.Hour;
+import com.naosim.dddwork.domain.time.Time;
 
 import java.time.Duration;
+
+import static com.naosim.dddwork.domain.hour.Hour.minus;
 
 /**
  * 勤務時間
@@ -38,22 +41,21 @@ public class WorkingHours {
 
     // 勤務時間計算
     public Hour calcWorkingHours() {
-        //TODO
-        return this.calcActualWorkingHours().minus(this.calcOverWorkHours());
+
+        return minus(calcActualWorkingHours().getTime(),new BreaktimeHours().getHoursWithoutBreaktime(getDailyWorkingStartTime(), getDailyWorkingEndTime()).getTime());
+//        return this.calcActualWorkingHours().minus(this.calcOverWorkHours());
     }
 
     // 残業時間計算
     public Hour calcOverWorkHours() {
-        //TODO
-        return this.calcActualWorkingHours();
+        return minus(calcActualWorkingHours().getTime(), PrescribedWorkingHours.定時時間.prescribedWorkingHours().getTime());
+//        return this.calcActualWorkingHours();
    }
 
     // 就業時間計算
     public Hour calcActualWorkingHours() {
 
-        //TODO
-
-        return null;
+        return this.getDailyWorkingEndTime().minus(this.getDailyWorkingStartTime());
 //        return
 //          new Hour(
 //                dailyWorkingEndTime.getMinutesLong() -
