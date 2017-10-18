@@ -25,6 +25,9 @@ public class Hour {
         this.time = new Time();
     }
 
+    public Time getTime() {
+        return this.time;
+    }
 
     public String getHHmm() {
         return "";
@@ -39,10 +42,6 @@ public class Hour {
         return new Hour(new Time());
     }
 
-    public Time getTime() {
-        return this.time;
-    }
-
     public Hour plus(Time plus) {
 
         return null;
@@ -53,13 +52,4 @@ public class Hour {
         //return new Hour(this.minutes - plus.getMinutes());
     }
 
-    public static Hour minus(Time baseTime, Time minusTime) {
-
-        return new Hour(baseTime).minus(new Hour(minusTime));
-    }
-
-    public static Hour plus(Time baseTime, Time plusTime) {
-
-        return new Hour(baseTime).plus(new Hour(plusTime));
-    }
 }
