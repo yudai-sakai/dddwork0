@@ -39,7 +39,8 @@ public class BreaktimeHours {
                     breaktime.getBreakStartTime().isAfter(dailyWorkingStartTime) ?
                     breaktime.getBreakStartTime() : dailyWorkingStartTime;
             //終了時刻取得
-            Time endTime = breaktime.getBreakEndTime().isAfter(dailyWorkingEndTime) ?
+            Time endTime =
+                    breaktime.getBreakEndTime().isAfter(dailyWorkingEndTime) ?
                     dailyWorkingEndTime:breaktime.getBreakEndTime();
 
             //終了時刻-開始時刻
