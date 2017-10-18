@@ -16,7 +16,11 @@ public class DailyWorkingStartTime {
         this.time = new Time(time);
     }
 
-    public boolean check(){
+    public Time getTime() {
+        return this.time;
+    }
+
+    public boolean check() {
         return true;
     }
 }
