@@ -17,11 +17,11 @@ public class BreaktimeHours {
             this.breakStartTime = new BreakStartTime(breakStartTime);
             this.breakEndTime = new BreakEndTime(breakEndTime);
         }
-        public BreakStartTime getBreakStartTime() {
-            return this.breakStartTime;
+        public Time getBreakStartTimeValue() {
+            return this.breakStartTime.getTime();
         }
-        public BreakEndTime getBreakEndTime() {
-            return this.breakEndTime;
+        public Time getBreakEndTimeValue() {
+            return this.breakEndTime.getTime();
         }
     }
 
@@ -33,15 +33,19 @@ public class BreaktimeHours {
         Breaktimes[] breaktimes = Breaktimes.values();
         Hour breaktimeSum = new Hour();
 
+        //Time型で比較する
+        Time dailyWorkingStartTimeValue = dailyWorkingStartTime.getTime();
+        Time dailyWorkingEndTimeValue = dailyWorkingEndTime.getTime();
+
         for (Breaktimes breaktime: breaktimes) {
             //開始時刻取得
             Time startTime =
-                    breaktime.getBreakStartTime().isAfter(dailyWorkingStartTime) ?
-                    breaktime.getBreakStartTime() : dailyWorkingStartTime;
+                    breaktime.getBreakStartTimeValue().isAfter(dailyWorkingStartTimeValue) ?
+                    breaktime.getBreakStartTimeValue() : dailyWorkingStartTimeValue;
             //終了時刻取得
             Time endTime =
-                    breaktime.getBreakEndTime().isAfter(dailyWorkingEndTime) ?
-                    dailyWorkingEndTime:breaktime.getBreakEndTime();
+                    breaktime.getBreakEndTimeValue().isAfter(dailyWorkingEndTimeValue) ?
+                    dailyWorkingEndTimeValue:breaktime.getBreakEndTimeValue();
 
             //終了時刻-開始時刻
             Hour diff = endTime.minus(startTime);
