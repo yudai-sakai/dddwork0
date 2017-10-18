@@ -10,7 +10,9 @@ public class KintaiDate {
     public KintaiDate(String date) {
         this.date = date;
     }
-
+    public String toString(){
+        return date;
+    }
     // チェック
     public boolean isDate(){
         // TODO

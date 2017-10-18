@@ -2,7 +2,6 @@ package com.naosim.dddwork.domain.hour;
 
 import com.naosim.dddwork.domain.time.Time;
 
-import java.time.Duration;
 
 /**
  * 時間
@@ -15,11 +14,21 @@ public class Hour {
         this.time = time;
     }
 
-   //HHMM取得
+    //HHMM取得
     public String getHHMM(){
        return "";
     }
+
     public Hour plus(Hour plus){
+        return this.plus(plus.getTime());
+    }
+
+    public Time getTime(){
+        return this.time;
+    }
+
+    public Hour plus(Time plus) {
+
         return null;
         //return new Hour(this.minutes + plus.getMinutes());
     }
