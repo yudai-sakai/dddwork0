@@ -28,28 +28,27 @@ public class BreaktimeHours {
             return this.breakEndTime.getTime();
         }
     }
-
     // 休憩控除時間取得
     // 引数 就業開始時間　就業終了時間
     // 戻り値　休憩控除時間
     public Hour getHoursWithoutBreaktime(DailyWorkingStartTime dailyWorkingStartTime,
-                                            DailyWorkingEndTime dailyWorkingEndTime){
+                                         DailyWorkingEndTime dailyWorkingEndTime) {
+        return this.getHoursWithoutBreaktime(dailyWorkingStartTime.getTime(), dailyWorkingEndTime.getTime());
+    }
+    public Hour getHoursWithoutBreaktime(Time dailyWorkingStartTime,
+                                         Time dailyWorkingEndTime){
         Breaktimes[] breaktimes = Breaktimes.values();
         Hour breaktimeSum = new Hour();
-
-        //Time型で比較する
-        Time dailyWorkingStartTimeValue = dailyWorkingStartTime.getTime();
-        Time dailyWorkingEndTimeValue = dailyWorkingEndTime.getTime();
 
         for (Breaktimes breaktime: breaktimes) {
             //開始時刻取得
             Time startTime =
-                    breaktime.getBreakStartTimeValue().isAfter(dailyWorkingStartTimeValue) ?
-                    breaktime.getBreakStartTimeValue() : dailyWorkingStartTimeValue;
+                    breaktime.getBreakStartTimeValue().isAfter(dailyWorkingStartTime) ?
+                    breaktime.getBreakStartTimeValue() : dailyWorkingStartTime;
             //終了時刻取得
             Time endTime =
-                    breaktime.getBreakEndTimeValue().isAfter(dailyWorkingEndTimeValue) ?
-                    dailyWorkingEndTimeValue:breaktime.getBreakEndTimeValue();
+                    breaktime.getBreakEndTimeValue().isAfter(dailyWorkingEndTime) ?
+                    dailyWorkingEndTime:breaktime.getBreakEndTimeValue();
 
             //終了時刻-開始時刻
             Hour diff = endTime.minus(startTime);
