@@ -4,13 +4,19 @@ import com.naosim.dddwork.domain.time.Time;
 
 import java.time.LocalDateTime;
 
-public class BreakEndTime extends Time {
+public class BreakEndTime {
+
+    private Time time;
 
     public BreakEndTime(String time) {
-        super(time);
+        this.time = new Time(time);
     }
 
-    public boolean check(){
+    public Time getTime() {
+        return this.time;
+    }
+
+    public boolean check() {
         return true;
     }
 

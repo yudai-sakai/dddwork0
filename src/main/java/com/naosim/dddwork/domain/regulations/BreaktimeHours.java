@@ -1,5 +1,9 @@
-package com.naosim.dddwork.domain.daily_kintai;
+package com.naosim.dddwork.domain.regulations;
 
+import com.naosim.dddwork.domain.daily_kintai.BreakEndTime;
+import com.naosim.dddwork.domain.daily_kintai.BreakStartTime;
+import com.naosim.dddwork.domain.daily_kintai.DailyWorkingEndTime;
+import com.naosim.dddwork.domain.daily_kintai.DailyWorkingStartTime;
 import com.naosim.dddwork.domain.hour.Hour;
 import com.naosim.dddwork.domain.time.Time;
 
@@ -17,31 +21,34 @@ public class BreaktimeHours {
             this.breakStartTime = new BreakStartTime(breakStartTime);
             this.breakEndTime = new BreakEndTime(breakEndTime);
         }
-        public BreakStartTime getBreakStartTime() {
-            return this.breakStartTime;
+        public Time getBreakStartTimeValue() {
+            return this.breakStartTime.getTime();
         }
-        public BreakEndTime getBreakEndTime() {
-            return this.breakEndTime;
+        public Time getBreakEndTimeValue() {
+            return this.breakEndTime.getTime();
         }
     }
-
     // 休憩控除時間取得
     // 引数 就業開始時間　就業終了時間
     // 戻り値　休憩控除時間
     public Hour getHoursWithoutBreaktime(DailyWorkingStartTime dailyWorkingStartTime,
-                                            DailyWorkingEndTime dailyWorkingEndTime){
+                                         DailyWorkingEndTime dailyWorkingEndTime) {
+        return this.getHoursWithoutBreaktime(dailyWorkingStartTime.getTime(), dailyWorkingEndTime.getTime());
+    }
+    public Hour getHoursWithoutBreaktime(Time dailyWorkingStartTime,
+                                         Time dailyWorkingEndTime){
         Breaktimes[] breaktimes = Breaktimes.values();
         Hour breaktimeSum = new Hour();
 
         for (Breaktimes breaktime: breaktimes) {
             //開始時刻取得
             Time startTime =
-                    breaktime.getBreakStartTime().isAfter(dailyWorkingStartTime) ?
-                    breaktime.getBreakStartTime() : dailyWorkingStartTime;
+                    breaktime.getBreakStartTimeValue().isAfter(dailyWorkingStartTime) ?
+                    breaktime.getBreakStartTimeValue() : dailyWorkingStartTime;
             //終了時刻取得
             Time endTime =
-                    breaktime.getBreakEndTime().isAfter(dailyWorkingEndTime) ?
-                    dailyWorkingEndTime:breaktime.getBreakEndTime();
+                    breaktime.getBreakEndTimeValue().isAfter(dailyWorkingEndTime) ?
+                    dailyWorkingEndTime:breaktime.getBreakEndTimeValue();
 
             //終了時刻-開始時刻
             Hour diff = endTime.minus(startTime);

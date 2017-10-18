@@ -1,5 +1,6 @@
-package com.naosim.dddwork.domain.daily_kintai;
+package com.naosim.dddwork.domain.regulations;
 
+import com.naosim.dddwork.domain.daily_kintai.DailyWorkingEndTime;
 import com.naosim.dddwork.domain.hour.Hour;
 
 public enum ServiceOverWorkStartTime {
@@ -8,7 +9,7 @@ public enum ServiceOverWorkStartTime {
     private Hour serviceOverWorkStartTime;
 
     ServiceOverWorkStartTime(String serviceOverWorkStartTime){
-        this.serviceOverWorkStartTime = new Hour(new DailyWorkingEndTime(serviceOverWorkStartTime));
+        this.serviceOverWorkStartTime = new Hour(new DailyWorkingEndTime(serviceOverWorkStartTime).getTime());
     }
 
     public Hour serviceOverWorkStartTime(){

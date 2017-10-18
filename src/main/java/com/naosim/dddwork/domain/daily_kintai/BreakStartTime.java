@@ -6,13 +6,19 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 
-public class BreakStartTime extends Time {
+public class BreakStartTime {
+
+    private Time time;
 
     public BreakStartTime(String time) {
-        super(time);
+        this.time = new Time(time);
     }
 
-    public boolean check(){
+    public Time getTime() {
+        return this.time;
+    }
+
+    public boolean check() {
         return true;
     }
 }
