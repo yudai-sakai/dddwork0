@@ -4,9 +4,9 @@ import com.naosim.dddwork.domain.daily_kintai.DailyWorkingEndTime;
 import com.naosim.dddwork.domain.daily_kintai.DailyWorkingStartTime;
 import com.naosim.dddwork.domain.daily_kintai.KintaiDate;
 import com.naosim.dddwork.domain.monthly_kintai.MonthlyKintai;
+import com.naosim.dddwork.domain.year_month.TargetYearMonth;
 import com.naosim.dddwork.service.InputKintai;
 import com.naosim.dddwork.service.TotalMonthlyKintai;
-import com.naosim.dddwork.domain.year_month.YearMonth;
 import java.util.Date;
 
 public class Main {
@@ -28,9 +28,11 @@ public class Main {
                 // 勤怠集計サービスを呼ぶ
                 TotalMonthlyKintai totalMonthlyKintai = new TotalMonthlyKintai();
                 // TODO
-                YearMonth yearMonth = new YearMonth(args[1]);
-                MonthlyKintai monthlyKintai = totalMonthlyKintai.execute(yearMonth);
+                TargetYearMonth targetYearMonth = new TargetYearMonth(args[1]);
+                MonthlyKintai monthlyKintai = totalMonthlyKintai.execute(targetYearMonth);
 
+                // 表示
+                DisplayResult.displayResult(monthlyKintai);
             }
 
         } catch (Exception e) {
