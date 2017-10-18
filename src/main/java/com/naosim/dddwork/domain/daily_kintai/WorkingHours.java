@@ -1,11 +1,8 @@
 package com.naosim.dddwork.domain.daily_kintai;
 
 import com.naosim.dddwork.domain.hour.Hour;
-import com.naosim.dddwork.domain.time.Time;
-
-import java.time.Duration;
-
-import static com.naosim.dddwork.domain.hour.Hour.minus;
+import com.naosim.dddwork.domain.regulations.BreaktimeHours;
+import com.naosim.dddwork.domain.regulations.PrescribedWorkingHours;
 
 /**
  * 勤務時間
@@ -18,8 +15,9 @@ public class WorkingHours {
         this.dailyWorkingStartTime = dailyWorkingStartTime;
         this.dailyWorkingEndTime = dailyWorkingEndTime;
     }
+
     //チェック
-    public boolean check(){
+    public boolean check() {
         //開始時刻判定
         this.dailyWorkingStartTime.check();
         //終了時刻判定
@@ -31,35 +29,32 @@ public class WorkingHours {
 //      if(this.dailyWorkingStartTime > this.dailyWorkingEndTime) ;
 
     }
-    public DailyWorkingStartTime getDailyWorkingStartTime(){
+
+    public DailyWorkingStartTime getDailyWorkingStartTime() {
         return dailyWorkingStartTime;
     }
 
-    public DailyWorkingEndTime getDailyWorkingEndTime(){
+    public DailyWorkingEndTime getDailyWorkingEndTime() {
         return dailyWorkingEndTime;
     }
 
     // 勤務時間計算
     public Hour calcWorkingHours() {
 
-        return minus(calcActualWorkingHours().getTime(),new BreaktimeHours().getHoursWithoutBreaktime(getDailyWorkingStartTime(), getDailyWorkingEndTime()).getTime());
-//        return this.calcActualWorkingHours().minus(this.calcOverWorkHours());
+        return new Hour(this.calcActualWorkingHours().getTime()).minus(new BreaktimeHours().getHoursWithoutBreaktime(getDailyWorkingStartTime(), getDailyWorkingEndTime()));
+
     }
 
     // 残業時間計算
     public Hour calcOverWorkHours() {
-        return minus(calcActualWorkingHours().getTime(), PrescribedWorkingHours.定時時間.prescribedWorkingHours().getTime());
-//        return this.calcActualWorkingHours();
-   }
+        return new Hour(calcActualWorkingHours().getTime()).minus(
+                new PrescribedWorkingHours().getPrescribedWorkingHours());
+    }
 
     // 就業時間計算
     public Hour calcActualWorkingHours() {
 
-        return this.getDailyWorkingEndTime().minus(this.getDailyWorkingStartTime());
-//        return
-//          new Hour(
-//                dailyWorkingEndTime.getMinutesLong() -
-//                        dailyWorkingStartTime.getMinutesLong());
+        return this.getDailyWorkingEndTime().getTime().minus(this.getDailyWorkingStartTime().getTime());
 
     }
 }

@@ -1,5 +1,9 @@
-package com.naosim.dddwork.domain.daily_kintai;
+jpackage com.naosim.dddwork.domain.regulations;
 
+import com.naosim.dddwork.domain.daily_kintai.BreakEndTime;
+import com.naosim.dddwork.domain.daily_kintai.BreakStartTime;
+import com.naosim.dddwork.domain.daily_kintai.DailyWorkingEndTime;
+import com.naosim.dddwork.domain.daily_kintai.DailyWorkingStartTime;
 import com.naosim.dddwork.domain.hour.Hour;
 import com.naosim.dddwork.domain.time.Time;
 
