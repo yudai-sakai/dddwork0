@@ -3,6 +3,7 @@ package com.naosim.dddwork.api;
 import com.naosim.dddwork.domain.daily_kintai.DailyWorkingEndTime;
 import com.naosim.dddwork.domain.daily_kintai.DailyWorkingStartTime;
 import com.naosim.dddwork.domain.daily_kintai.KintaiDate;
+import com.naosim.dddwork.domain.monthly_kintai.MonthlyKintai;
 import com.naosim.dddwork.service.InputKintai;
 import com.naosim.dddwork.service.TotalMonthlyKintai;
 import com.naosim.dddwork.domain.year_month.YearMonth;
@@ -28,7 +29,8 @@ public class Main {
                 TotalMonthlyKintai totalMonthlyKintai = new TotalMonthlyKintai();
                 // TODO
                 YearMonth yearMonth = new YearMonth(args[1]);
-                totalMonthlyKintai.execute(yearMonth);
+                MonthlyKintai monthlyKintai = totalMonthlyKintai.execute(yearMonth);
+
             }
 
         } catch (Exception e) {

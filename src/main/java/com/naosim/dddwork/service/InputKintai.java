@@ -1,6 +1,7 @@
 package com.naosim.dddwork.service;
 
 import com.naosim.dddwork.datasource.KintaiRepositoryCSV;
+import com.naosim.dddwork.domain.KintaiRepository;
 import com.naosim.dddwork.domain.daily_kintai.*;
 
 
