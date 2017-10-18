@@ -31,33 +31,23 @@ public class BreaktimeHours {
     public Hour getHoursWithoutBreaktime(DailyWorkingStartTime dailyWorkingStartTime,
                                             DailyWorkingEndTime dailyWorkingEndTime){
         Breaktimes[] breaktimes = Breaktimes.values();
-        Hour breaktimeSum = new Hour(new Time("0000"));
+        Hour breaktimeSum = new Hour();
 
-//        for (Breaktimes breaktime: breaktimes) {
-//            Hour diff = null;
-//
-//            //休憩開始時間が就業開始時間よりも後
-//            if( breaktime.getBreakStartTime().isAfter(dailyWorkingStartTime)){
-//                //休憩終了時間が就業終了時間よりも後
-//                if( breaktime.getBreakEndTime().isAfter(dailyWorkingEndTime)){
-//                    //就業終了時間-就業開始時間
-//                    diff = dailyWorkingEndTime.minus(breaktime.getBreakStartTime()));
-//                }else{
-//                    //就業終了時間-就業開始時間
-//                    diff = breaktime.getBreakEndTime().minus(breaktime.getBreakStartTime()));
-//                }
-//            }else{
-//                //休憩終了時間が就業終了時間よりも後
-//                if( breaktime.getBreakEndTime().isAfter(dailyWorkingEndTime)){
-//                    //休憩終了時間-就業開始時間
-//                    diff = dailyWorkingEndTime.minus(dailyWorkingStartTime));
-//                }else{
-//                    //就業終了時間-就業開始時間
-//                    diff = breaktime.getBreakEndTime().minus(dailyWorkingStartTime));
-//                }
-//            }
-//            breaktimeSum = breaktimeSum.plus(diff);
-//        }
+        for (Breaktimes breaktime: breaktimes) {
+            //開始時刻取得
+            Time startTime =
+                    breaktime.getBreakStartTime().isAfter(dailyWorkingStartTime) ?
+                    breaktime.getBreakStartTime() : dailyWorkingStartTime;
+            //終了時刻取得
+            Time endTime = breaktime.getBreakEndTime().isAfter(dailyWorkingEndTime) ?
+                    dailyWorkingEndTime:breaktime.getBreakEndTime();
+
+            //終了時刻-開始時刻
+            Hour diff = endTime.minus(startTime);
+
+            //差分を加算
+            breaktimeSum = breaktimeSum.plus(diff);
+        }
         return breaktimeSum;
     }
 }

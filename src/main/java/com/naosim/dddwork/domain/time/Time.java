@@ -1,5 +1,7 @@
 package com.naosim.dddwork.domain.time;
 
+import com.naosim.dddwork.domain.hour.Hour;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -37,4 +39,8 @@ public class Time {
     public boolean isAfter(Time t) {
         return this.time.isAfter(t.getTime());
     }
+    public Hour minus(Time t){
+        return null;
+    }
+
 }
