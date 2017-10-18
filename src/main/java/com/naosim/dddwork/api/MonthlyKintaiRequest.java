@@ -1,6 +1,6 @@
 package com.naosim.dddwork.api;
 
-import com.naosim.dddwork.domain.year_month.YearMonth;
+import com.naosim.dddwork.domain.year_month.TargetYearMonth;
 
 public class MonthlyKintaiRequest {
     private String yearMonth;
@@ -13,7 +13,7 @@ public class MonthlyKintaiRequest {
         return true;
     }
 
-    public YearMonth getYearMonth() {
-        return new YearMonth(yearMonth);
+    public TargetYearMonth getYearMonth() {
+        return new TargetYearMonth(yearMonth);
     }
 }

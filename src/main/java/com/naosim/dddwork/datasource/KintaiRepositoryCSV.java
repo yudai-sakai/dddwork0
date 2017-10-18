@@ -3,7 +3,7 @@ package com.naosim.dddwork.datasource;
 import com.naosim.dddwork.domain.KintaiRepository;
 import com.naosim.dddwork.domain.daily_kintai.*;
 import com.naosim.dddwork.domain.monthly_kintai.DailyKintaiList;
-import com.naosim.dddwork.domain.year_month.YearMonth;
+import com.naosim.dddwork.domain.year_month.TargetYearMonth;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -31,7 +31,7 @@ public class KintaiRepositoryCSV implements KintaiRepository {
     }
 
     @Override
-    public DailyKintaiList readRegisteredKintai(YearMonth yearMonth) {
+    public DailyKintaiList readRegisteredKintai(TargetYearMonth yearMonth) {
         List<DailyKintai> dailyKintaiList = new ArrayList<>();
         try {
             // ファイル読み込み
@@ -45,7 +45,7 @@ public class KintaiRepositoryCSV implements KintaiRepository {
                 String[] columns = line.split(",");
                 // TODO columnsのチェック
                 String strDate = columns[0].substring(0, 5);
-                YearMonth csvDate = new YearMonth(strDate);
+                TargetYearMonth csvDate = new TargetYearMonth(strDate);
 
                 if (yearMonth.isEqualYearMonth(csvDate)) {
                     DailyKintai dailyKintai = new DailyKintai(new KintaiDate(columns[0]), new WorkingHours(new DailyWorkingStartTime(columns[1]), new DailyWorkingEndTime(columns[2])));
