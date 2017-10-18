@@ -4,10 +4,12 @@ import com.naosim.dddwork.domain.time.Time;
 
 import java.time.LocalDateTime;
 
-public class DailyWorkingEndTime extends Time {
+public class DailyWorkingEndTime {
+
+    private Time time;
 
     public DailyWorkingEndTime(String time) {
-        super(time);
+        this.time = new Time(time);
     }
 
     public boolean check(){

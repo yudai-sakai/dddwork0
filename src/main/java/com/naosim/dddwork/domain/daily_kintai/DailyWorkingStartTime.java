@@ -8,10 +8,12 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-public class DailyWorkingStartTime extends Time {
+public class DailyWorkingStartTime {
+
+    private Time time;
 
     public DailyWorkingStartTime(String time) {
-        super(time);
+        this.time = new Time(time);
     }
 
     public boolean check(){
