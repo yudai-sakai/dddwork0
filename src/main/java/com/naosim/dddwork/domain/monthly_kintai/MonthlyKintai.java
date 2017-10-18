@@ -2,15 +2,15 @@ package com.naosim.dddwork.domain.monthly_kintai;
 
 import com.naosim.dddwork.domain.daily_kintai.DailyKintai;
 import com.naosim.dddwork.domain.hour.Hour;
-import com.naosim.dddwork.domain.year_month.YearMonth;
+import com.naosim.dddwork.domain.year_month.TargetYearMonth;
 
 // 月次勤怠
 public class MonthlyKintai {
-    YearMonth yearMonth;
+    TargetYearMonth yearMonth;
     DailyKintaiList dailyKintaiList;
 
 
-    public MonthlyKintai(YearMonth yearMonth, DailyKintaiList dailyKintaiList) {
+    public MonthlyKintai(TargetYearMonth yearMonth, DailyKintaiList dailyKintaiList) {
         this.yearMonth = yearMonth;
         this.dailyKintaiList = dailyKintaiList;
     }
