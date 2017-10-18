@@ -8,17 +8,21 @@ import java.time.format.DateTimeFormatter;
 /**
  * 時刻
  */
-public abstract class Time {
+public class Time {
     protected LocalDateTime time;
 
     public Time (String time){
-        // フォーマットチェック
-        DateFormat dateFormat = new SimpleDateFormat("HHMM");
-        LocalDateTime nowTime = LocalDateTime.now();
-        this.time = LocalDateTime.of(nowTime.getYear(), nowTime.getMonth(), nowTime.getDayOfMonth(), Integer.parseInt(time.substring(0,2)), Integer.parseInt(time.substring(2)));
+        // インスタンス変数設定（時刻として不正な文字列が入力された場合、ここで例外発生
+        this.time =
+            LocalDateTime.of(
+                    2001, 1, 1,
+                    Integer.parseInt(time.substring(0,2)), Integer.parseInt(time.substring(2)));
+
     }
 
-    public abstract boolean check();
+    public boolean check(){
+        return true;
+    }
 
     public LocalDateTime getTime() {
         return time;
@@ -27,4 +31,7 @@ public abstract class Time {
         return this.time.format(DateTimeFormatter.ofPattern("HHmm"));
     }
 
+    public boolean isAfter(Time t){
+        return this.time.isAfter(t.getTime());
+    }
 }
