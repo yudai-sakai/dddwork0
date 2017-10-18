@@ -2,6 +2,9 @@ package com.naosim.dddwork.domain.hour;
 
 import com.naosim.dddwork.domain.time.Time;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 
 /**
  * 時間
@@ -10,53 +13,53 @@ public class Hour {
 
     private final Time time;
 
-    public Hour(Time time){
+    public Hour(Time time) {
         this.time = time;
     }
 
-    //HHMM取得
-    public String getHHMM(){
-       return "";
+    public Hour(String hhMMTime) {
+        this.time = new Time(hhMMTime);
     }
 
-    public Hour plus(Hour plus){
-        return this.plus(plus.getTime());
+    public Hour() {
+        this.time = new Time();
     }
 
-    public Time getTime(){
+
+    public String getHHmm() {
+        return "";
+    }
+
+    /**
+     * @param Hour plus
+     * @return Hour
+     */
+    public Hour plus(Hour plus) {
+
+        return new Hour(new Time());
+    }
+
+    public Time getTime() {
         return this.time;
     }
 
     public Hour plus(Time plus) {
 
         return null;
-        //return new Hour(this.minutes + plus.getMinutes());
     }
-    public Hour minus(Hour plus){
+
+    public Hour minus(Hour minus) {
         return null;
         //return new Hour(this.minutes - plus.getMinutes());
     }
 
-//    public long getMinutes(){
-//        return this.minutes;
-//    }
-//    public static Hour minus(long minutes1, long minutes2 ){
-//        return new Hour(minutes1-minutes2);
-//    }
-//    public static Hour plus(long minutes1, long minutes2 ){
-//        return new Hour(minutes1+minutes2);
-//    }
+    public static Hour minus(Time baseTime, Time minusTime) {
 
-    //
-//
-//    public static Hour minus(Time time1, Time time2 ){
-//
-//        return new Hour(time1.getTime() + time2.getTime());
-//    }
-//
-//    public static Hour plus(Hour hour1, Hour Hour2 ){
-//
-//        return new Hour(hour1.getMinutes() + Hour2.getTime());
-//    }
+        return new Hour(baseTime).minus(new Hour(minusTime));
+    }
 
+    public static Hour plus(Time baseTime, Time plusTime) {
+
+        return new Hour(baseTime).plus(new Hour(plusTime));
+    }
 }
