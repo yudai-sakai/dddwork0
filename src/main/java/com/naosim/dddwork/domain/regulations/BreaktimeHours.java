@@ -1,4 +1,4 @@
-jpackage com.naosim.dddwork.domain.regulations;
+package com.naosim.dddwork.domain.regulations;
 
 import com.naosim.dddwork.domain.daily_kintai.BreakEndTime;
 import com.naosim.dddwork.domain.daily_kintai.BreakStartTime;
