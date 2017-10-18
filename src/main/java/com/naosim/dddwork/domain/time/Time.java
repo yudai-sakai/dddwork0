@@ -40,6 +40,7 @@ public class Time {
         return this.time.isAfter(t.getTime());
     }
     public Hour minus(Time t){
+        //TODO
         return null;
     }
 
