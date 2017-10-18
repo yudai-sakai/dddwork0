@@ -12,9 +12,9 @@ public class YearMonth {
     private final LocalDate yearMonth;
     private final String PATTERN = "yyyyMM";
 
-    public YearMonth(String dateStr) throws ParseException{
-        // Date型変換
-        this.yearMonth = LocalDate.parse(dateStr, DateTimeFormatter.ofPattern(PATTERN));
+    public YearMonth(String dateStr) {
+            // Date型変換
+            this.yearMonth = LocalDate.parse(dateStr, DateTimeFormatter.ofPattern(PATTERN));
     }
 
     public boolean isEqualYearMonth(YearMonth otherYearMonth){
