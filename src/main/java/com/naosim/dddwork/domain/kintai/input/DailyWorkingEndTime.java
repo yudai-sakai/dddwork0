@@ -1,8 +1,6 @@
-package com.naosim.dddwork.domain.daily_kintai;
+package com.naosim.dddwork.domain.kintai.input;
 
 import com.naosim.dddwork.domain.time.Time;
-
-import java.time.LocalDateTime;
 
 public class DailyWorkingEndTime {
 

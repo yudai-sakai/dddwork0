@@ -1,9 +1,9 @@
 package com.naosim.dddwork.service;
 
 import com.naosim.dddwork.datasource.TotalKintaiRepositoryCSV;
-import com.naosim.dddwork.domain.monthly_kintai.KintaiTotalList;
-import com.naosim.dddwork.domain.monthly_kintai.TotalKintaiRepository;
-import com.naosim.dddwork.domain.monthly_kintai.MonthlyKintai;
+import com.naosim.dddwork.domain.kintai.total.KintaiTotalList;
+import com.naosim.dddwork.domain.kintai.total.TotalKintaiRepository;
+import com.naosim.dddwork.domain.kintai.total.MonthlyKintai;
 import com.naosim.dddwork.domain.year_month.TargetYearMonth;
 
 // 月次集計

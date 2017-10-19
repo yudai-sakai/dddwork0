@@ -1,8 +1,8 @@
 package com.naosim.dddwork.service;
 
 import com.naosim.dddwork.datasource.TotalKintaiRepositoryCSV;
-import com.naosim.dddwork.domain.monthly_kintai.TotalKintaiRepository;
-import com.naosim.dddwork.domain.daily_kintai.*;
+import com.naosim.dddwork.domain.kintai.input.*;
+import com.naosim.dddwork.domain.kintai.total.TotalKintaiRepository;
 
 
 public class InputKintai {

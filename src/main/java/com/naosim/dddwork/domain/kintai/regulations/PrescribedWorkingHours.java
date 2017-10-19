@@ -1,4 +1,4 @@
-package com.naosim.dddwork.domain.regulations;
+package com.naosim.dddwork.domain.kintai.regulations;
 
 import com.naosim.dddwork.domain.hour.Hour;
 import com.naosim.dddwork.domain.time.Time;

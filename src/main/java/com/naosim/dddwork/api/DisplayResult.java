@@ -1,6 +1,6 @@
 package com.naosim.dddwork.api;
 
-import com.naosim.dddwork.domain.monthly_kintai.MonthlyKintai;
+import com.naosim.dddwork.domain.kintai.total.MonthlyKintai;
 
 public class DisplayResult {
 

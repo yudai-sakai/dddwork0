@@ -1,4 +1,4 @@
-package com.naosim.dddwork.domain.daily_kintai;
+package com.naosim.dddwork.domain.kintai.input;
 
 import com.naosim.dddwork.domain.hour.Hour;
 

@@ -2,9 +2,6 @@ package com.naosim.dddwork.domain.hour;
 
 import com.naosim.dddwork.domain.time.Time;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 
 /**
  * 時間

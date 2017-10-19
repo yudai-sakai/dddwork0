@@ -1,9 +1,8 @@
 package com.naosim.dddwork.api;
 
-import com.naosim.dddwork.domain.daily_kintai.DailyKintai;
-import com.naosim.dddwork.domain.daily_kintai.DailyWorkingEndTime;
-import com.naosim.dddwork.domain.daily_kintai.DailyWorkingStartTime;
-import com.naosim.dddwork.domain.daily_kintai.KintaiDate;
+import com.naosim.dddwork.domain.kintai.input.DailyWorkingEndTime;
+import com.naosim.dddwork.domain.kintai.input.DailyWorkingStartTime;
+import com.naosim.dddwork.domain.kintai.input.KintaiDate;
 
 public class InputKintaiRequest {
     private String kintaiDate;
