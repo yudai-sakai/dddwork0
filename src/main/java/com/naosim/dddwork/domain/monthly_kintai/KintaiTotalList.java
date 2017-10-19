@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class DailyKintaiList {
+public class KintaiTotalList {
     List<DailyKintai> dailyKintaiList;
 
-    public DailyKintaiList(List<DailyKintai> dailyKintaiList) {
+    public KintaiTotalList(List<DailyKintai> dailyKintaiList) {
         this.dailyKintaiList = dailyKintaiList;
     }
 
@@ -17,9 +17,9 @@ public class DailyKintaiList {
         return Collections.unmodifiableList(dailyKintaiList);
     }
 
-    public DailyKintaiList add(DailyKintai dailyKintai) {
+    public KintaiTotalList add(DailyKintai dailyKintai) {
         List<DailyKintai> result = new ArrayList<>(dailyKintaiList);
         result.add(dailyKintai);
-        return new DailyKintaiList(result);
+        return new KintaiTotalList(result);
     }
 }
