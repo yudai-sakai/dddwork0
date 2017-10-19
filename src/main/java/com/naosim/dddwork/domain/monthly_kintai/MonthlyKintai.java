@@ -7,12 +7,12 @@ import com.naosim.dddwork.domain.year_month.TargetYearMonth;
 // 月次勤怠
 public class MonthlyKintai {
     TargetYearMonth yearMonth;
-    DailyKintaiList dailyKintaiList;
+    KintaiTotalList kintaiTotalList;
 
 
-    public MonthlyKintai(TargetYearMonth yearMonth, DailyKintaiList dailyKintaiList) {
+    public MonthlyKintai(TargetYearMonth yearMonth, KintaiTotalList kintaiTotalList) {
         this.yearMonth = yearMonth;
-        this.dailyKintaiList = dailyKintaiList;
+        this.kintaiTotalList = kintaiTotalList;
     }
 
 
@@ -20,7 +20,7 @@ public class MonthlyKintai {
     public Hour calcTotalWorkingHours() {
         Hour totalWorkingHours = new Hour(); // TODO Hourの初期化
 
-        for (DailyKintai dailyKintai : dailyKintaiList.asList()) {
+        for (DailyKintai dailyKintai : kintaiTotalList.asList()) {
             totalWorkingHours.plus(dailyKintai.calcWorkingHours());
         }
 
@@ -31,7 +31,7 @@ public class MonthlyKintai {
     public Hour calcTotalOverWorkHours() {
         Hour totalOverWorkHours = new Hour(); // TODO Hourの初期化
 
-        for (DailyKintai dailyKintai : dailyKintaiList.asList()) {
+        for (DailyKintai dailyKintai : kintaiTotalList.asList()) {
             totalOverWorkHours.plus(dailyKintai.calcOverWorkHours());
         }
 
