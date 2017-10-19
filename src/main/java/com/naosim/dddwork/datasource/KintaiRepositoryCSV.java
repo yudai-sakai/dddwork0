@@ -23,8 +23,8 @@ public class KintaiRepositoryCSV implements KintaiRepository {
             fileWriter.write(String.format(
                     "%s,%s,%s\n",
                     dailyKintai.getKintaiDate(),
-                    dailyKintai.getDailyWorkingStartTime().getTimeHHMMString(),
-                    dailyKintai.getDailyWorkingEndTime().getTimeHHMMString()));
+                    dailyKintai.getDailyWorkingStartTime().getTime(),
+                    dailyKintai.getDailyWorkingEndTime().getTime()));
         } catch (Exception e) {
             out.println(e);
         }
