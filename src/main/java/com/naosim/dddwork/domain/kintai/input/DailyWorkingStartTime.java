@@ -1,14 +1,12 @@
-package com.naosim.dddwork.domain.daily_kintai;
+package com.naosim.dddwork.domain.kintai.input;
 
 import com.naosim.dddwork.domain.time.Time;
 
-import java.time.LocalDateTime;
-
-public class BreakEndTime {
+public class DailyWorkingStartTime {
 
     private Time time;
 
-    public BreakEndTime(String time) {
+    public DailyWorkingStartTime(String time) {
         this.time = new Time(time);
     }
 
@@ -19,6 +17,4 @@ public class BreakEndTime {
     public boolean check() {
         return true;
     }
-
-
 }

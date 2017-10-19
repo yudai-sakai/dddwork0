@@ -1,6 +1,6 @@
-package com.naosim.dddwork.domain.monthly_kintai;
+package com.naosim.dddwork.domain.kintai.total;
 
-import com.naosim.dddwork.domain.daily_kintai.DailyKintai;
+import com.naosim.dddwork.domain.kintai.input.DailyKintai;
 import com.naosim.dddwork.domain.hour.Hour;
 import com.naosim.dddwork.domain.year_month.TargetYearMonth;
 

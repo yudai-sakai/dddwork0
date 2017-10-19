@@ -1,6 +1,4 @@
-package com.naosim.dddwork.domain.daily_kintai;
-
-import java.time.LocalDate;
+package com.naosim.dddwork.domain.kintai.input;
 
 // 勤怠日付
 public class KintaiDate {

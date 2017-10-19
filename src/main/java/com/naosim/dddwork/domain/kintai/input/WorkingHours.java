@@ -1,8 +1,8 @@
-package com.naosim.dddwork.domain.daily_kintai;
+package com.naosim.dddwork.domain.kintai.input;
 
 import com.naosim.dddwork.domain.hour.Hour;
-import com.naosim.dddwork.domain.regulations.BreaktimeHours;
-import com.naosim.dddwork.domain.regulations.PrescribedWorkingHours;
+import com.naosim.dddwork.domain.kintai.regulations.BreaktimeHours;
+import com.naosim.dddwork.domain.kintai.regulations.PrescribedWorkingHours;
 
 /**
  * 勤務時間

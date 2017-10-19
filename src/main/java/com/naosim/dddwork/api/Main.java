@@ -1,13 +1,8 @@
 package com.naosim.dddwork.api;
 
-import com.naosim.dddwork.domain.daily_kintai.DailyWorkingEndTime;
-import com.naosim.dddwork.domain.daily_kintai.DailyWorkingStartTime;
-import com.naosim.dddwork.domain.daily_kintai.KintaiDate;
-import com.naosim.dddwork.domain.monthly_kintai.MonthlyKintai;
-import com.naosim.dddwork.domain.year_month.TargetYearMonth;
+import com.naosim.dddwork.domain.kintai.total.MonthlyKintai;
 import com.naosim.dddwork.service.InputKintai;
 import com.naosim.dddwork.service.TotalMonthlyKintai;
-import java.util.Date;
 
 public class Main {
 
