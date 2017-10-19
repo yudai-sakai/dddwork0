@@ -1,18 +1,17 @@
 package com.naosim.dddwork.service;
 
-import com.naosim.dddwork.datasource.TotalKintaiRepositoryCSV;
+import com.naosim.dddwork.datasource.InputKintaiRepositoryCSV;
 import com.naosim.dddwork.domain.kintai.input.*;
-import com.naosim.dddwork.domain.kintai.total.TotalKintaiRepository;
 
 
 public class InputKintai {
 
-    private TotalKintaiRepository totalKintaiRepository = new TotalKintaiRepositoryCSV();
+    private InputKintaiRepositoryCSV inputKintaiRepository = new InputKintaiRepositoryCSV();
 
-    public void execute(KintaiDate kintaiDate, DailyWorkingStartTime dailyKintaiStartTime, DailyWorkingEndTime dailyKintaiEndTime){
-        
+    public void execute(KintaiDate kintaiDate, DailyWorkingStartTime dailyKintaiStartTime, DailyWorkingEndTime dailyKintaiEndTime) {
+
         WorkingHours workingHours = new WorkingHours(dailyKintaiStartTime, dailyKintaiEndTime);
         DailyKintai dailyKintai = new DailyKintai(kintaiDate, workingHours);
-        totalKintaiRepository.registerKintai(dailyKintai);
+        inputKintaiRepository.registerKintai(dailyKintai);
     }
 }
