@@ -1,8 +1,8 @@
 package com.naosim.dddwork.datasource;
 
-import com.naosim.dddwork.domain.KintaiRepository;
+import com.naosim.dddwork.domain.monthly_kintai.TotalKintaiRepository;
 import com.naosim.dddwork.domain.daily_kintai.*;
-import com.naosim.dddwork.domain.monthly_kintai.DailyKintaiList;
+import com.naosim.dddwork.domain.monthly_kintai.KintaiTotalList;
 import com.naosim.dddwork.domain.year_month.TargetYearMonth;
 
 import java.io.BufferedReader;
@@ -15,23 +15,9 @@ import java.util.List;
 import static java.lang.System.out;
 
 // 勤怠リポジトリCSV
-public class KintaiRepositoryCSV implements KintaiRepository {
+public class TotalKintaiRepositoryCSV implements TotalKintaiRepository {
     @Override
-    public void registerKintai(DailyKintai dailyKintai) {
-        File file = new File("/tmp/test_write.csv");
-        try (FileWriter fileWriter = new FileWriter(file, true)) {
-            fileWriter.write(String.format(
-                    "%s,%s,%s\n",
-                    dailyKintai.getKintaiDate(),
-                    dailyKintai.getDailyWorkingStartTime().getTimeHHMMString(),
-                    dailyKintai.getDailyWorkingEndTime().getTimeHHMMString()));
-        } catch (Exception e) {
-            out.println(e);
-        }
-    }
-
-    @Override
-    public DailyKintaiList readRegisteredKintai(TargetYearMonth yearMonth) {
+    public KintaiTotalList readRegisteredKintai(TargetYearMonth yearMonth) {
         List<DailyKintai> dailyKintaiList = new ArrayList<>();
         try {
             // ファイル読み込み
@@ -58,6 +44,6 @@ public class KintaiRepositoryCSV implements KintaiRepository {
             out.println(e);
         }
 
-        return new DailyKintaiList(dailyKintaiList);
+        return new KintaiTotalList(dailyKintaiList);
     }
 }
